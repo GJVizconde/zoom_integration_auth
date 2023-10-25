@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "7d1a78d2-cd7f-436f-b2ee-b7138b07a6bc",
+		"name": "Zoom_Integration_GJVL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27477100",
+		"_collection_link": "https://dealup.postman.co/workspace/Munia~8d28ac64-2ada-44b2-a74e-2966c8f1938e/collection/27477100-7d1a78d2-cd7f-436f-b2ee-b7138b07a6bc?action=share&source=collection_link&creator=27477100"
+	},
+	"item": [
+		{
+			"name": "Generate Meeting SDK Auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"meetingNumber\": \"4545\",\r\n  \"role\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{zoom_url}}/zoom/createMeetingSignature",
+					"host": [
+						"{{zoom_url}}"
+					],
+					"path": [
+						"zoom",
+						"createMeetingSignature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Zoom User Info by email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{zoom_url}}/zoom/user/{{email}}",
+					"host": [
+						"{{zoom_url}}"
+					],
+					"path": [
+						"zoom",
+						"user",
+						"{{email}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Oauth Server to Server Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{zoom_url}}/zoom/oauthServertoServer",
+					"host": [
+						"{{zoom_url}}"
+					],
+					"path": [
+						"zoom",
+						"oauthServertoServer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a meeting",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\":\"Este es el tema\",\r\n    \"description\":\"La descripcion\",\r\n    \"start_time\":\"2023-03-23\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{zoom_url}}/zoom/createMeeting",
+					"host": [
+						"{{zoom_url}}"
+					],
+					"path": [
+						"zoom",
+						"createMeeting"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "zoom_url",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		},
+		{
+			"key": "email",
+			"value": "henrylastdance17@gmail.com",
+			"type": "string"
+		}
+	]
+}

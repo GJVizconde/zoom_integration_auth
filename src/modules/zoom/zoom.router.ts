@@ -3,7 +3,7 @@ import { createMeeting, createMeetingSignature, getAccessToken, getUser } from '
 
 const zoomRouter = Router()
 
-zoomRouter.post('/oauth', getAccessToken)
+zoomRouter.post('/oauthServertoServer', getAccessToken)
 zoomRouter.get('/user/:email', getUser)
 zoomRouter.post('/createMeeting', createMeeting)
 zoomRouter.post('/createMeetingSignature', createMeetingSignature)
